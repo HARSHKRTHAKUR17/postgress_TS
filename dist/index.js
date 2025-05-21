@@ -44,7 +44,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // const client = new Client({
-//   connectionString: "postgresql://neondb_owner:npg_PDpWdEmeT6A9@ep-muddy-firefly-a8dv864b-pooler.eastus2.azure.neon.tech/neondb?sslmode=require"
+//   connectionString: "postgres://postgres:yourpassword@localhost:5432/yourdatabase"
 // })
 // // postgres://postgres:yourpassword@localhost:5432/yourdatabase
 // async function createUsersTable() {
@@ -65,13 +65,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import { Client } from 'pg';
 // // Async function to insert data into a table
 // async function insertData() {
-//   const client = new Client({
-//     host: 'ep-muddy-firefly-a8dv864b-pooler.eastus2.azure.neon.tech',
-//     port: 5432,
-//     database: 'neondb',
-//     user: 'neondb_owner',
-//     password: 'npg_PDpWdEmeT6A9',
-//   });
+// const client: Client = new Client({
+//     host: process.env.DB_HOST as string,
+//     port: parseInt(process.env.DB_PORT || '5432'),
+//     database: process.env.DB_NAME as string,
+//     user: process.env.DB_USER as string,
+//     password: process.env.DB_PASSWORD as string,
+//     ssl: {
+//         rejectUnauthorized: false, // Modify if stricter SSL needed
+//     },
+// });
 //   try {
 //     await client.connect(); // Ensure client connection is established
 //     const insertQuery = "INSERT INTO users (username, email, password) VALUES ('username2', 'user3@example.com', 'user_password');";
@@ -88,16 +91,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // import { Client } from 'pg';
 // // Async function to insert data into a table
 // async function insertData(username: string, email: string, password: string) {
-//     const client = new Client({
-//     host: 'ep-muddy-firefly-a8dv864b-pooler.eastus2.azure.neon.tech',
-//     port: 5432,
-//     database: 'neondb',
-//     user: 'neondb_owner',
-//     password: 'npg_PDpWdEmeT6A9',
+// const client: Client = new Client({
+//     host: process.env.DB_HOST as string,
+//     port: parseInt(process.env.DB_PORT || '5432'),
+//     database: process.env.DB_NAME as string,
+//     user: process.env.DB_USER as string,
+//     password: process.env.DB_PASSWORD as string,
 //     ssl: {
-//         rejectUnauthorized: false, // Adjust based on your security requirements
-//       },
-//   });
+//         rejectUnauthorized: false, // Modify if stricter SSL needed
+//     },
+// });
 //   try {
 //     await client.connect(); // Ensure client connection is established
 //     // Use parameterized query to prevent SQL injection
